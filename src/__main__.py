@@ -1,10 +1,10 @@
 from .monkey import Monkey
-#rounds.tamanhototaldaslistassomadas
+#rounds.tamanhototaldaslistassomadas(velocidade da solução inicials)
 def main():
     monkeys = []
     monkey_r_dict = dict()
 
-    with open("casos/caso1000.txt") as f:
+    with open("casos/caso0100.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)
@@ -35,7 +35,7 @@ def main():
             monkey.inpar = monkeys[int(refs[1])]
             #print(f"{monkey.nome} {monkey.par.nome} {monkey.inpar.nome}")
 
-    #rounds = 5
+    rounds = 10000
     #muito tempo
     for i in range(rounds):
         for monkey in monkeys:
@@ -56,5 +56,8 @@ if __name__ == "__main__":
 
 #ordenar as listas entre par e impar?
 #achar os que não são referenciados?
-#achar a rodada onde fica igual e não muda mais os tamahos das listas? (sim depoid de 5 rodadas nada muda pro primeiro caso)
+#achar os que ficam em 0 depois de algumas rodadas
+#achar a rodada onde fica igual e não muda mais os tamahos das listas? (sim depois de 5 rodadas nada muda pro primeiro caso)
+#pro segundo fica variando entre alguns valores especificos 
 #algo a mais para otimizar? (ultimo caso ainda lento)
+#sera que o ultimo caso tem solução?
