@@ -39,18 +39,18 @@ def main():
             monkey.inpar = monkeys[int(refs[1])]
             # print(f"{monkey.nome} {monkey.par.nome} {monkey.inpar.nome}")
     #########################################################################################
-
+    print("começou")
     # muito tempo
     for i in range(rounds):
-        for monkey in monkeys:
-            monkey.distribui()
+        [monkey.distribui() for monkey in monkeys]
+
     print("acabou")
     # muito tempo
     vencedor = -10
     for moneky in monkeys:
-        print(len(moneky.cocos))
-        if len(moneky.cocos) >= vencedor:
-            vencedor = len(moneky.cocos)
+        # print(len(moneky))
+        if len(moneky) >= vencedor:
+            vencedor = len(moneky)
 
     print(vencedor)
 
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     main()
 
 # ordenar as listas entre par e impar?
-# lista par e lista inpar? e faz só uma vez as ordenações(dimimui consideravelmete o nmr de op)
+# lista par e lista inpar? e fa(dimimui considz só uma vez as ordenaçõeseravelmete o nmr de op)
 # distribuir os inteiros de forma paralela????
 # achar os que não são referenciados?
 # achar os que ficam em 0 depois de algumas rodadas
@@ -68,4 +68,4 @@ if __name__ == "__main__":
 # algo a mais para otimizar? (ultimo caso ainda lento)
 # sera que o ultimo caso tem solução?
 
-#montar o grapho e fazer operações?
+# montar o grapho e fazer operações?
