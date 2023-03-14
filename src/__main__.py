@@ -67,3 +67,5 @@ if __name__ == "__main__":
 # pro segundo fica variando entre alguns valores especificos (e se botar o numeoro total de rodadas já nao roda)
 # algo a mais para otimizar? (ultimo caso ainda lento)
 # sera que o ultimo caso tem solução?
+
+#montar o grapho e fazer operações?
