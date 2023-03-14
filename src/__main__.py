@@ -34,8 +34,8 @@ def main():
             monkey.par = monkeys[int(refs[0])]
             monkey.inpar = monkeys[int(refs[1])]
             #print(f"{monkey.nome} {monkey.par.nome} {monkey.inpar.nome}")
-
-    rounds = 10000
+#########################################################################################
+    
     #muito tempo
     for i in range(rounds):
         for monkey in monkeys:
@@ -55,9 +55,10 @@ if __name__ == "__main__":
     main()
 
 #ordenar as listas entre par e impar?
+#lista par e lista inpar? e faz só uma vez as ordenações(dimimui consideravelmete o nmr de op)
 #achar os que não são referenciados?
 #achar os que ficam em 0 depois de algumas rodadas
 #achar a rodada onde fica igual e não muda mais os tamahos das listas? (sim depois de 5 rodadas nada muda pro primeiro caso)
-#pro segundo fica variando entre alguns valores especificos 
+#pro segundo fica variando entre alguns valores especificos (e se botar o numeoro total de rodadas já nao roda)
 #algo a mais para otimizar? (ultimo caso ainda lento)
 #sera que o ultimo caso tem solução?
