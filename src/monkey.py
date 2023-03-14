@@ -5,7 +5,7 @@ class Monkey:
         self.cocos = cocos
         self.par = par
         self.inpar = inpar
-        self.nmr_cocos = len(cocos)
+        
  
     def distribui(self):
         for coco in self.cocos:
@@ -15,9 +15,8 @@ class Monkey:
                 self.inpar.recebe(coco)
 
         self.cocos.clear()
-        self.nmr_cocos = len(self.cocos)
+        
 
 
     def recebe(self, coco):
         self.cocos.append(coco)
-        self.nmr_cocos = len(self.cocos)

@@ -4,7 +4,7 @@ def main():
     monkeys = []
     monkey_r_dict = dict()
 
-    with open("casos/caso1000.txt") as f:
+    with open("casos/caso0050.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)
@@ -34,10 +34,26 @@ def main():
             monkey.par = monkeys[int(refs[0])]
             monkey.inpar = monkeys[int(refs[1])]
             #print(f"{monkey.nome} {monkey.par.nome} {monkey.inpar.nome}")
+
+    #rounds = 5
     #muito tempo
     for i in range(rounds):
         for monkey in monkeys:
             monkey.distribui()
+    print("acabou")
+    #muito tempo
+    vencedor = -10
+    for moneky in monkeys:
+       print(len(moneky.cocos))
+       if len(moneky.cocos) >= vencedor:
+           vencedor = len(moneky.cocos)
+        
     
+    print(vencedor)
+
 if __name__ == "__main__":
     main()
+
+#ordenar as listas entre par e impar?
+#achar os que não são referenciados?
+#achar a rodada onde fica igual e não muda mais os tamahos das listas? (sim depoid de 5 rodadas nada muda pro primeiro caso)
