@@ -4,7 +4,7 @@ def main():
     monkeys = []
     monkey_r_dict = dict()
 
-    with open("casos/caso0050.txt") as f:
+    with open("casos/caso1000.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)
@@ -57,3 +57,4 @@ if __name__ == "__main__":
 #ordenar as listas entre par e impar?
 #achar os que não são referenciados?
 #achar a rodada onde fica igual e não muda mais os tamahos das listas? (sim depoid de 5 rodadas nada muda pro primeiro caso)
+#algo a mais para otimizar? (ultimo caso ainda lento)
