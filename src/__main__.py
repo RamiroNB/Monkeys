@@ -6,7 +6,7 @@ def main():
     monkeys = []
     monkey_r_dict = dict()
 
-    with open("casos/caso0100.txt") as f:
+    with open("casos/caso0050.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)
@@ -29,15 +29,11 @@ def main():
                 Monkey(nome=referencias[1], cocos=cocos, par=None, inpar=None)
             )
 
-            # 0 cria macacos
-            # 1 tam vetor
-            # numeros
-        # print(monkey_r_dict)
         for monkey in monkeys:
             refs = monkey_r_dict[monkey.nome]
             monkey.par = monkeys[int(refs[0])]
             monkey.inpar = monkeys[int(refs[1])]
-            # print(f"{monkey.nome} {monkey.par.nome} {monkey.inpar.nome}")
+
     #########################################################################################
     print("começou")
     # muito tempo
@@ -46,13 +42,15 @@ def main():
 
     print("acabou")
     # muito tempo
+    idx_vencedor = -1
     vencedor = -10
-    for moneky in monkeys:
-        # print(len(moneky))
+    for i, moneky in enumerate(monkeys):
         if len(moneky) >= vencedor:
+            idx_vencedor = i
             vencedor = len(moneky)
 
-    print(vencedor)
+    print(monkeys[idx_vencedor].nome)
+    print(len(monkeys[idx_vencedor]))
 
 
 if __name__ == "__main__":
