@@ -6,7 +6,7 @@ def main():
     monkeys = []
     monkey_r_dict = dict()
 
-    with open("casos/caso0100.txt") as f:
+    with open("casos/caso0050.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)
@@ -32,27 +32,14 @@ def main():
         for monkey in monkeys:
             refs = monkey_r_dict[monkey.nome]
             monkey.par = monkeys[int(refs[0])]
-            monkey.par.par_parent = monkey
             monkey.impar = monkeys[int(refs[1])]
-            monkey.impar.impar_parent = monkey
+
     #########################################################################################
     print("começou")
     # muito tempo
 
     for i in range(rounds):
         [monkey.distribui() for monkey in monkeys]
-        killed_monkeys = list()
-        for j, monkey in enumerate(monkeys):
-            if (
-                len(monkey) == 0
-                and monkey.par_parent is None
-                and monkey.impar_parent is None
-            ):
-                killed_monkeys.append(j)
-                monkey.suicide()
-        # [monkeys.pop(monkey) for monkey in killed_monkeys]
-        for j, monkey_idx in enumerate(killed_monkeys):
-            monkeys.pop(monkey_idx - j)
 
     print("acabou")
     # muito tempo
