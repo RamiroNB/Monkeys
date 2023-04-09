@@ -1,12 +1,3 @@
-import hashlib
-
-
-def hash_matrix(matrix):
-    matrix_bytes = str(matrix).encode("utf-8")
-    matrix_hash = hashlib.sha256(matrix_bytes).hexdigest()
-    return matrix_hash
-
-
 def main():
     monkeys_r_dict = dict()
     with open("casos/caso1000.txt") as f:
@@ -44,19 +35,19 @@ def main():
             monkeys[i][2] = qtd_pares
             monkeys[i][3] = qtd_impares
             i = i + 1
-    old_hash = hash_matrix(monkeys)
-    idx = 0
+
+    states = set()
     for round in range(rounds):
         for i in range(len(monkeys)):
             monkeys[monkeys[i][0]][2] = monkeys[monkeys[i][0]][2] + monkeys[i][2]
             monkeys[i][2] = 0
             monkeys[monkeys[i][1]][3] = monkeys[monkeys[i][1]][3] = monkeys[i][3]
             monkeys[i][3] = 0
-        hash = hash_matrix(monkeys)
-        if hash == old_hash:
-            idx = +1
-        if idx == 5:
+        if tuple(map(tuple, monkeys)) in states:
             break
+        else:
+            # states.clear()
+            states.add(tuple(map(tuple, monkeys)))
 
     idx_vencedor = -1
     vencedor = -10
