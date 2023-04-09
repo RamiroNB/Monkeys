@@ -36,18 +36,18 @@ def main():
             monkeys[i][3] = qtd_impares
             i = i + 1
 
-    states = set()
+    states = dict()
+    states["last_state"] = 0
     for round in range(rounds):
         for i in range(len(monkeys)):
             monkeys[monkeys[i][0]][2] = monkeys[monkeys[i][0]][2] + monkeys[i][2]
             monkeys[i][2] = 0
             monkeys[monkeys[i][1]][3] = monkeys[monkeys[i][1]][3] = monkeys[i][3]
             monkeys[i][3] = 0
-        if tuple(map(tuple, monkeys)) in states:
+        if tuple(map(tuple, monkeys)) == states["last_state"]:
             break
         else:
-            # states.clear()
-            states.add(tuple(map(tuple, monkeys)))
+            states["last_state"] = tuple(map(tuple, monkeys))
 
     idx_vencedor = -1
     vencedor = -10
