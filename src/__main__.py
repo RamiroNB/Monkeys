@@ -1,4 +1,4 @@
-from .monkey import Monkey
+from monkey import Monkey
 
 
 # rounds.tamanhototaldaslistassomadas(velocidade da solução inicials)
@@ -6,7 +6,7 @@ def main():
     monkeys = []
     monkey_r_dict = dict()
 
-    with open("casos/caso0900.txt") as f:
+    with open("casos/caso1000.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)

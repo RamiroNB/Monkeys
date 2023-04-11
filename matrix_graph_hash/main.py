@@ -1,6 +1,6 @@
 def main():
     monkeys_r_dict = dict()
-    with open("casos/caso1000.txt") as f:
+    with open("casos/caso0600.txt") as f:
         lines = f.readlines()
         r = lines[0]
         lines.remove(r)
